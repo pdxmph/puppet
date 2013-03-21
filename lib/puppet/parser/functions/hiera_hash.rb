@@ -16,6 +16,9 @@ module Puppet::Parser::Functions
     
   `hiera_hash` expects that all values returned will be hashes. If any of the values 
   found in the data sources are strings or arrays, puppet will raise a type mismatch error.
+
+  More thorough examples of `hiera_hash` are available at:  
+  <http://docs.puppetlabs.com/hiera/1/puppet.html#hiera-lookup-functions>
   ") do |*args|
     require 'hiera_puppet'
     key, default, override = HieraPuppet.parse_args(args)

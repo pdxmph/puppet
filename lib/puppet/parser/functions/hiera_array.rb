@@ -10,10 +10,13 @@ module Puppet::Parser::Functions
     in the absence of  matches to the `key` argument
   - an `override` argument in the third position, providing a data source to consult for 
     matching values, even if it would not ordinarily be part of the matched hierarchy. 
-    If Hiera doesn't find a matching key in the named override data source it will 
+    If Hiera doesn't find a matching key in the named override data source, it will 
     continue to search through the rest of the hierarchy.
     
-  If any matched value is a hash, puppet will raise a type mismatch error.    
+  If any matched value is a hash, puppet will raise a type mismatch error.
+
+  More thorough examples of `hiera` are available at:  
+  <http://docs.puppetlabs.com/hiera/1/puppet.html#hiera-lookup-functions>
   ") do |*args|
     require 'hiera_puppet'
     key, default, override = HieraPuppet.parse_args(args)
